@@ -1,9 +1,9 @@
 <ul class="li-group card card-body">
     <li 
         *ngFor = "let log of logs" 
-        class="list-group-item d-flex justify-content-between align-items-center"
+        class="list-group-item d-flex justify-content-between align-items-center border border-dark mt-2"
     >
-       <a href="#"> {{ log.text }} </a>
+       <a (click) = "onSelect(log)" href="#"> {{ log.text }} </a>
        <span class="log-date"> {{ log.date | date: 'short' }} </span>
        <i class="fa fa-remove"></i>
     </li>
