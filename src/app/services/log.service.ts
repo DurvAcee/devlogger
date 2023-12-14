@@ -43,4 +43,25 @@ export class LogService {
   public setFormLog(log: Log){
     this.logSource.next(log);
   }
+
+  public addLog(log: Log){
+    this.logs.unshift(log);
+  }
+
+  public updateLog(log: Log){
+    this.logs.forEach((cur, index) => {
+      if(log.id == cur.id){
+        this.logs.splice(index, 1);
+      }
+    });
+    this.logs.unshift(log);
+  }
+
+  public deleteLog(log: Log){
+    this.logs.forEach((cur, index) => {
+      if (log.id == cur.id){
+        this.logs.splice(index, 1);
+      }
+    });
+  }
 }

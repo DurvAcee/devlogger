@@ -1,5 +1,5 @@
 <div class="card card-body mb-3">
-    <form>
+    <form (ngSubmit)="onSubmit()">
         <div class="form-group">
             <input 
                 type="text" 
@@ -10,8 +10,14 @@
             >
         </div>
         <div class="form-actions mt-3">
-            <input type="submit" value="Add Log" class="btn btn-light" [disabled]="!this.text">
-            <button type="button" class="btn btn-warning ml-2" [hidden] = "!this.text"> Clear </button>
+            <input type="submit" [value] = 'isNew ? "Add Log" : "Update Log"'  class="btn btn-light" [disabled]="!this.text">
+            <button 
+                type="button"
+                class="btn btn-warning ml-2" 
+                [hidden] = "!this.text"
+                (click) = "onClear()"
+            > Clear 
+            </button>
         </div>
     </form>
 </div>
