@@ -10,10 +10,10 @@
             >
         </div>
         <div class="form-actions mt-3">
-            <input type="submit" [value] = 'isNew ? "Add Log" : "Update Log"'  class="btn btn-light" [disabled]="!this.text">
+            <input type="submit" [value] = 'isNew ? "Add Log" : "Update Log"'  class="btn btn-primary" [disabled]="!this.text">
             <button 
                 type="button"
-                class="btn btn-warning ml-2" 
+                class="btn btn-danger ml-1" 
                 [hidden] = "!this.text"
                 (click) = "onClear()"
             > Clear 
