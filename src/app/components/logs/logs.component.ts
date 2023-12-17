@@ -10,6 +10,7 @@ export class LogsComponent implements OnInit {
   public logs!: Log[];
   public selectedLog!: Log;
   public loaded:boolean = false;
+  public isLoading: boolean = false;
 
   constructor(private logService: LogService) { 
   }
@@ -22,7 +23,10 @@ export class LogsComponent implements OnInit {
     });
     this.logService.getLogs().subscribe( logs => {
       this.logs = logs;
-      this.loaded = true;
+      this.simulateApiCall();
+      // setTimeout(() => {
+      //   this.loaded = true;
+      // }, 1750);
     });
   }
 
@@ -35,5 +39,13 @@ export class LogsComponent implements OnInit {
     if(confirm('Are you sure?')){
       this.logService.deleteLog(log);
     }
+  }
+
+  public simulateApiCall() {
+    this.isLoading = true;
+    setTimeout(() => {
+      this.isLoading = false;
+      this.loaded = true;
+    }, 2000); 
   }
 }

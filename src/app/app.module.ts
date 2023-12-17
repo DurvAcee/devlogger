@@ -8,13 +8,15 @@ import { LogFormComponent } from './components/log-form/log-form.component';
 import { LogsComponent } from './components/logs/logs.component';
 import { LogService } from './services/log.service';
 import { FormsModule } from '@angular/forms';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     LogFormComponent,
-    LogsComponent
+    LogsComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
