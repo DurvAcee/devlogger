@@ -56,7 +56,7 @@ export class LogFormComponent implements OnInit {
 
   clearState() {
     this.isNew = true;
-    this.id, this.text, this.date = '', '', '';
+    this.id = this.text = this.date = '';
     this.logService.clearState();
   }
 
